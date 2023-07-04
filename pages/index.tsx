@@ -1,10 +1,7 @@
-import HeadFile from "../components/Head";
-
 export default function Home() {
     return (
         <>
-            <HeadFile />
-            <h1>Hey</h1>
+            <h1 className="test">Hey</h1>
         </>
     );
 }
