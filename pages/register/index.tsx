@@ -1,9 +1,9 @@
-import Form from "../../components/Form/Form"
+import Registration from "../../components/Registration"
 
 const Register = () => {
     return (
-        <div className="test">
-            <Form formType={"Register"} />
+        <div>
+            <Registration />
         </div>
     )
 }
