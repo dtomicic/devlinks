@@ -4,10 +4,22 @@ import Link from "next/link";
 
 interface IFormProps {
     formType: string;
+    usernameValue?: string;
+    passwordValue?: string;
+    submitHandler?: (e: React.FormEvent<HTMLFormElement>) => void;
+    usernameChangeHandler?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    passwordChangeHandler?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Form = (props: IFormProps) => {
-    const { formType } = props;
+    const {
+        formType,
+        usernameValue,
+        passwordValue,
+        submitHandler,
+        usernameChangeHandler,
+        passwordChangeHandler,
+    } = props;
     return (
         <FormStyled>
             <div className="form-heading">
@@ -23,10 +35,22 @@ const Form = (props: IFormProps) => {
                 <span className="form-type">{formType}</span>
             </div>
             <div className="form-body">
-                <form>
+                <form onSubmit={submitHandler}>
                     <div className="form-inputs">
-                        <input type="text" placeholder="Username" />
-                        <input type="password" placeholder="Password" />
+                        <input
+                            type="text"
+                            placeholder="Username"
+                            required
+                            onChange={usernameChangeHandler}
+                            value={usernameValue}
+                        />
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            required
+                            onChange={passwordChangeHandler}
+                            value={passwordValue}
+                        />
                     </div>
                     <span className="form-note">
                         {formType === "Login" ? (
@@ -36,7 +60,8 @@ const Form = (props: IFormProps) => {
                             </span>
                         ) : (
                             <span>
-                                Already have an account? <Link href="/">Login</Link>
+                                Already have an account?{" "}
+                                <Link href="/">Login</Link>
                             </span>
                         )}
                     </span>
