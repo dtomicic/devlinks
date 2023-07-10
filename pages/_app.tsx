@@ -1,10 +1,13 @@
+import React from "react";
 import type { AppProps } from "next/app";
 import GlobalStyle from "../styles/globalstyles";
 import Head from "next/head";
+import { AppContext } from "../contexts/AppContext";
 
 export default function App({ Component, pageProps }: AppProps) {
+    const [user, setUser] = React.useState(null);
     return (
-        <>
+        <AppContext.Provider value={{user, setUser}}>
             <Head>
                 <meta
                     name="viewport"
@@ -15,6 +18,6 @@ export default function App({ Component, pageProps }: AppProps) {
             </Head>
             <GlobalStyle />
             <Component {...pageProps} />
-        </>
+        </AppContext.Provider>
     );
 }
