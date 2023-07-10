@@ -1,11 +1,16 @@
 import { SuccessBoxStyled } from "./style";
 import { AiFillCheckCircle } from "react-icons/ai";
 
-const SuccessBox = () => {
+interface ISuccessBoxProps {
+    message: string;
+}
+
+const SuccessBox = (props: ISuccessBoxProps) => {
+    const { message } = props;
     return (
         <SuccessBoxStyled>
             <AiFillCheckCircle />
-            <span>Successful registration! Redirecting to login...</span>
+            <span>{message}</span>
         </SuccessBoxStyled>
     )
 }
