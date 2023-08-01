@@ -1,6 +1,7 @@
 import React from "react";
-import Login from "../components/Login";
 import { AppContext } from "../contexts/AppContext";
+import Dashboard from "../components/Dashboard";
+import Login from "../components/Login";
 
 export default function Home() {
     const { user, setUser } = React.useContext(AppContext);
@@ -14,5 +15,5 @@ export default function Home() {
         }
     }, []);
 
-    return <>{user ? <div>Logged in!</div> : <Login />}</>;
+    return <>{user ? <Dashboard /> : <Login />}</>;
 }

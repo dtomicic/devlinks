@@ -1,11 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   html,
   body {
     padding: 0;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+    background-color: #f2f2f2;
   }
 
   a {
@@ -18,4 +19,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export default GlobalStyle
+export const colors = {
+  purple: "#4416ff"
+}

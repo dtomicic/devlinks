@@ -6,11 +6,11 @@ export const FormStyled = styled.div`
     align-items: center;
     justify-content: center;
     width: 80%;
-    background-color: #f2f2f2;
+    background-color: white;
     border-radius: 15px;
     padding: 35px;
     max-width: 350px;
-    box-shadow: 0px 0px 5px 0px #D8D8D8;
+    box-shadow: 0px 0px 2px 0px #D8D8D8;
 
     .form-heading {
         display: flex;
